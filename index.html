@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashCards</title>
+    <link class="js-meta-favicon" rel="icon" href="assets/icons/LOGO.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 1024px)">
+</head>
+<body>
+<div class="popup-overlay active" id="auth-modal" style="bg-brown; z-index: 100000; display: flex;">
+    <div class="popup-box" style="max-width: 350px;">
+        <img src="assets/img/animals/monkey.png" style="width: 80px; margin-bottom: 15px;" alt="Logo">
+        <h2 id="auth-title" style="margin-top: 0; margin-bottom: 20px; font-weight: 900; color: #1e1e1c;">Вход в аккаунт</h2>
+
+        <div class="form-group">
+            <input type="text" id="auth-login" placeholder="Логин" style="width: 100%; padding: 12px 16px; margin-bottom: 12px; border-radius: 14px; border: 2px solid #1e1e1c; font-size: 16px; background: #f8f5f3;">
+            <input type="password" id="auth-password" placeholder="Пароль" style="width: 100%; padding: 12px 16px; margin-bottom: 12px; border-radius: 14px; border: 2px solid #1e1e1c; font-size: 16px; background: #f8f5f3;">
+        </div>
+
+        <p id="auth-error-msg" style="color: #d9534f; font-size: 14px; font-weight: bold; margin-bottom: 15px; display: none;"></p>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <button id="btn-auth-action" style="width: 100%; padding: 14px; border-radius: 16px; background: #1e1e1c; color: #f8f5f3; font-weight: 900; font-size: 16px; border: none; cursor: pointer;">ВОЙТИ</button>
+            <span id="btn-auth-switch" style="font-size: 14px; font-weight: bold; color: #1e1e1c; text-decoration: underline; cursor: pointer; margin-top: 5px;">Нет аккаунта? Зарегистрироваться</span>
+        </div>
+    </div>
+</div>
+<div id="app-content">
+<header>
+    <nav class="bg-white rounded">
+        <div class="center-flex">
+            <div class="profile-wrapper">
+                <img src="assets/img/animals/monkey.png" id="header-avatar" class="header-icon nav-tab" data-tab="shop" alt="Профиль и Магазин"> <!--data-tab - ставит метку для переключения вкладок   -->
+                <div class="profile-level-container">
+                    <div class="profile-level-wrapper">
+                        <span class="profile-level-label">Уровень <span id="profile-level-number">1</span></span>
+                        <div class="profile-progress-bar">
+                            <div class="profile-progress-fill" id="profile-progress-fill" style="width: 0;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="center-flex bg-brown rounded nav2">
+                <div class="center-flex bg-white rounded nav3">
+                    <img src="assets/img/nav/home.png" class="header-icon nav-tab active" data-tab="home" alt="Home Page">
+                    <img src="assets/img/nav/flashcards.png" id="nav-tab-flashcards" class="header-icon nav-tab nav-tab-hidden" data-tab="flashcards" alt="Flashcards Page">
+                    <img src="assets/img/nav/reviews.png" class="header-icon nav-tab" data-tab="favorites" alt="Favorites Page">
+                    <img src="assets/img/nav/stat.png" class="header-icon nav-tab" data-tab="stats" alt="Stats Page">
+                </div>
+            </div>
+
+            <img src="assets/img/nav/settings.png" class="header-icon nav-tab" data-tab="settings" alt="Settings">
+        </div>
+    </nav>
+</header>
+<main>
+
+    <article id="tab-home" class="tab-content active">
+        <div class="w-100 text-center">
+
+            <div class="app-section">
+                <h1 class="main-section-title">ВЫБОР УРОВНЯ</h1>
+
+                <div class="all-stars-cnt">
+                    <img src="assets/img/nav/reviews.png" class="star-img-icon active" style="display: inline-block; vertical-align: middle; margin-right: 5px;" alt="Рейтинг">
+                    Общий рейтинг: <span id="home-total-stars">0</span> / <span id="home-max-possible-stars">12</span>
+                </div>
+            </div>
+
+            <div id="current-session-container" style="display: none; background: #f8f5f3; border: 3px solid #1e1e1c; border-radius: 40px; max-width: 600px; margin: 25px auto; padding: 30px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <div style="font-size: 14px; font-weight: 700; color: #1e1e1c; opacity: 0.6; letter-spacing: 1px; margin-bottom: 10px;">ТЕКУЩЕЕ ПРОХОЖДЕНИЕ</div>
+                <h2 id="current-session-title" class="fw-bold" style="font-size: 32px; color: #1e1e1c; margin-bottom: 15px;">ЖИВОТНЫЕ</h2>
+                <p id="current-session-progress-text" style="font-size: 18px; color: #1e1e1c; margin-bottom: 25px;">Карточка 1 из 6 (Изучено: 0)</p>
+                <button id="btn-continue-session" style="background-color: #1e1e1c; color: #f8f5f3; border: none; padding: 16px 40px; font-size: 20px; font-weight: 900; border-radius: 30px; cursor: pointer; width: 100%; max-width: 100%; transition: opacity 0.2s;">ПРОДОЛЖИТЬ ОБУЧЕНИЕ</button>
+            </div>
+
+            <div class="levels-grid" id="levels-container">
+                <div class="level-card bg-white setup-card" data-level="1" id="card-l1">
+                    <div class="level-num">УРОВЕНЬ 1</div>
+                    <h2 class="fw-bold">ЖИВОТНЫЕ</h2>
+                    <div class="level-status" id="status-l1">Доступно</div>
+                </div>
+
+                <div class="level-card locked setup-card" data-level="2" id="card-l2">
+                    <div class="level-num">УРОВЕНЬ 2</div>
+                    <h2 class="fw-bold">ЕДА</h2>
+                    <div class="level-status" id="status-l2">Закрыто</div>
+                </div>
+
+                <div class="level-card locked setup-card" data-level="3" id="card-l3">
+                    <div class="level-num">УРОВЕНЬ 3</div>
+                    <h2 class="fw-bold">ЭМОЦИИ</h2>
+                    <div class="level-status" id="status-l3">Закрыто</div>
+                </div>
+
+                <div class="level-card locked setup-card" data-level="4" id="card-l4">
+                    <div class="level-num">УРОВЕНЬ 4</div>
+                    <h2 class="fw-bold">ОДЕЖДА</h2>
+                    <div class="level-status" id="status-l4">Закрыто</div>
+                </div>
+
+                <div class="level-card locked setup-card" data-level="5" id="card-l5">
+                    <div class="level-num">УРОВЕНЬ 5</div>
+                    <h2 class="fw-bold" style="font-size: 20px;">СКОРО БУДЕТ ОТКРЫТО</h2>
+                    <div class="level-status" id="status-l5">Закрыто</div>
+                </div>
+            </div>
+
+            <div class="app-section" id="user-decks-section">
+                <h1 class="main-section-title">МОИ КОЛОДЫ</h1>
+                <button class="deck-create-btn" id="open-create-deck-btn">СОЗДАТЬ СВОЮ КОЛОДУ</button>
+                <div class="levels-grid" id="user-decks-container" style="gap:0">
+                </div>
+            </div>
+
+        </div>
+    </article>
+
+    <article id="tab-stats" class="tab-content">
+        <div class="stats-dashboard-wrapper text-center app-section">
+            <h1 class="main-section-title">МОЯ СТАТИСТИКА</h1>
+
+            <div class="dashboard-grid">
+                <div class="dash-card bg-white">
+                    <h3>ВРЕМЯ В ИГРЕ</h3>
+                    <p id="stat-time">00:00</p>
+                </div>
+                <div class="dash-card bg-white">
+                    <h3>ПОЛУЧЕНО ЗВЕЗД</h3>
+                    <p id="stat-stars">0 / 12</p>
+                </div>
+                <div class="dash-card bg-white">
+                    <h3>ВЫУЧЕНО СЛОВ</h3>
+                    <p id="stat-words">0 / 19</p>
+                </div>
+                <div class="dash-card bg-white">
+                    <h3>ПРОЙДЕНО ТЕМ</h3>
+                    <p id="stat-themes">0 / 4</p>
+                </div>
+            </div>
+
+            <div class="chart-section bg-white">
+                <h3 class="fw-bold m-20" style="font-size: 24px;">Прогресс по категориям (%)</h3>
+                <div class="chart-container" id="chart-bars-container">
+                    <div class="chart-column">
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" id="bar-l1" style="height: 0;">
+                                <span class="bar-percentage" id="percent-l1">0%</span>
+                            </div>
+                        </div>
+                        <span class="chart-label">Животные</span>
+                    </div>
+                    <div class="chart-column">
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" id="bar-l2" style="height: 0;">
+                                <span class="bar-percentage" id="percent-l2">0%</span>
+                            </div>
+                        </div>
+                        <span class="chart-label">Еда</span>
+                    </div>
+                    <div class="chart-column">
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" id="bar-l3" style="height: 0;">
+                                <span class="bar-percentage" id="percent-l3">0%</span>
+                            </div>
+                        </div>
+                        <span class="chart-label">Эмоции</span>
+                    </div>
+                    <div class="chart-column">
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" id="bar-l4" style="height: 0;">
+                                <span class="bar-percentage" id="percent-l4">0%</span>
+                            </div>
+                        </div>
+                        <span class="chart-label">Одежда</span>
+                    </div>
+                    <div class="chart-column">
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar" id="bar-l5" style="height: 0;">
+                                <span class="bar-percentage" id="percent-l5">0%</span>
+                            </div>
+                        </div>
+                        <span class="chart-label">Скоро...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <article id="tab-flashcards" class="tab-content">
+        <div class="flashcards-game-wrapper">
+
+            <div id="game-screen" class="w-100">
+                <div class="stats-container">
+                    <div class="stars" id="stars-rating"></div>
+                    <div class="progress-bar-wrapper">
+                        <span id="progress-text">Изучено: 0 / 6</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-grid">
+                    <div class="button-flex">
+                        <button id="btn-dont-know" class="action-btn-circle"><img src="assets/img/animals/frog.png" height="80" width="96" alt="Не знаю"/></button>
+                        <h2 class="fw-bold fs-20">НЕ ЗНАЮ</h2>
+                    </div>
+
+                    <div class="card-scene">
+                        <div class="card" id="flashcard">
+                            <div class="card-face card-front bg-white">
+                                <button class="card-fav-btn btn-fav-toggle" aria-label="Добавить в избранное">
+                                    <img src="assets/img/nav/reviews.png" alt="Fav"/>
+                                </button>
+                                <img src="assets/img/animals/cat.png" class="card-icon card-img" id="front-card-img" alt="Card">
+                                <p class="fw-bold fs-55 card-text">КОТ</p>
+                            </div>
+                            <div class="card-face card-back bg-white">
+                                <button class="card-fav-btn btn-fav-toggle" aria-label="Добавить в избранное">
+                                    <img src="assets/img/nav/reviews.png" alt="Fav"/>
+                                </button>
+                                <img src="assets/img/animals/cat.png" class="card-icon card-img" id="back-card-img" alt="Card">
+                                <p class="fw-bold fs-55 card-text">CAT</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button-flex">
+                        <button id="btn-know" class="action-btn-circle"><img src="assets/img/animals/bear.png" height="80" width="96" alt="Знаю"/></button>
+                        <h2 class="fw-bold fs-20">ЗНАЮ</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div id="end-screen" class="end-card bg-white">
+                <h1 class="fw-bold fs-55">УРОВЕНЬ ЗАВЕРШЕН!</h1>
+                <div class="end-stars" id="end-stars-rating"></div>
+                <p class="fs-24 m-20" id="end-result-text">Вы изучили 0 из 6 слов</p>
+                <div style="display: flex; gap: 20px;">
+                    <button id="btn-to-menu" class="btn-primary fw-bold" style="opacity: 0.7;">В МЕНЮ</button>
+                    <button id="btn-restart" class="btn-primary fw-bold">ЗАНОВО</button>
+                </div>
+            </div>
+
+        </div>
+    </article>
+
+    <article id="tab-favorites" class="tab-content">
+        <div class="favorites-dashboard-wrapper text-center">
+            <h1 class="fw-bold fs-55 m-20">ИЗБРАННЫЕ СЛОВА</h1>
+            <p class="fs-20 var-text-muted" id="fav-empty-msg" style="margin-bottom: 30px;">У вас пока нет избранных слов. Нажмите на иконку звезды во время игры.</p>
+
+            <div class="fav-words-grid" id="fav-grid-container"></div>
+        </div>
+    </article>
+
+    <article id="tab-shop" class="tab-content">
+        <div class="shop-dashboard-wrapper text-center">
+            <h1 class="fw-bold fs-55 m-20">МАГАЗИН АВАТАРОВ</h1>
+
+            <div class="shop-balance-badge">
+                Доступно для покупки: <span id="shop-balance-count">0</span>
+                <img src="assets/img/nav/reviews.png" class="star-img-icon active" style="width: 26px; height: 26px; margin-left: 5px;" alt="Звезды">
+            </div>
+
+            <div class="shop-grid" id="shop-items-container"></div>
+        </div>
+    </article>
+
+    <article id="tab-settings" class="tab-content">
+        <div class="settings-dashboard-wrapper text-center">
+            <h1 class="fw-bold fs-55 m-20">НАСТРОЙКИ</h1>
+
+            <div class="settings-box bg-white">
+                <div class="settings-item">
+                    <div class="settings-info">
+                        <h3>Направление перевода</h3>
+                        <p>С какого языка начинается показ карточки</p>
+                    </div>
+                    <div class="lang-select">
+                        <div class="lang-select-trigger">
+                            <span>Русский</span>
+                            <div class="arrow"></div>
+                        </div>
+                        <div class="lang-options">
+                            <span class="lang-option selected" data-value="ru-en">Русский</span>
+                            <span class="lang-option" data-value="en-ru">Английский</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-item" style="border-bottom: none; padding-bottom: 0; margin-bottom: 0;">
+                    <div class="settings-info">
+                        <h3>Очистить прогресс</h3>
+                        <p>Обнулить заработанные звезды, графики, время, избранные слова, купленные аватары и кастомные колоды</p>
+                    </div>
+                    <button id="btn-reset-progress" class="btn-danger-action">СБРОСИТЬ ВСЁ</button>
+                </div>
+
+                <div class="settings-item" style="border-bottom: none; padding-bottom: 0; margin-bottom: 0;">
+                    <div class="settings-info">
+                        <h3>Выйти из аккаунта</h3>
+                        <p>Завершить сессию и вернуться на экран входа</p>
+                    </div>
+                    <button id="btn-logout" class="btn-danger-action">ВЫЙТИ</button>
+                </div>
+            </div>
+        </div>
+    </article>
+</main>
+
+<div class="popup-overlay" id="create-deck">
+    <div class="popup-box popup-deck">
+        <h2 id="popup-title-text">Новая колода</h2>
+
+        <div class="form-group">
+            <label for="input-deck-name">Название колоды (Обяз.): </label>
+            <input type="text" id="input-deck-name" placeholder="Например: Цвета или Глаголы">
+        </div>
+
+        <hr style="border: 0; border-top: 2px solid #1e1e1c; margin: 20px 0;">
+        <h3 style="text-align: center; margin-top: 0; font-size: 18px; color: #1e1e1c;">Добавление карточки в колоду</h3>
+
+        <div class="form-group">
+            <label for="input-card-word">Слово / Название (Обяз.): </label>
+            <input type="text" id="input-card-word" placeholder="Красный / Red">
+        </div>
+        <div class="form-group">
+            <label for="input-card-trans">Перевод значения (Обяз.): </label>
+            <input type="text" id="input-card-trans" placeholder="Перевод">
+        </div>
+        <div class="form-group">
+            <label>Изображение (Необяз.): </label>
+            <div class="file-upload-wrapper">
+                <input type="file" id="input-card-img" class="file-upload-input" accept="image/*">
+                <div class="file-upload-button" id="file-upload-btn-text">
+                    <span>Выбрать изображение</span>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="deck-create-btn" id="add-card-to-list-btn" style="margin: 15px auto; font-size: 14px; padding: 10px 22px; border-radius: 18px;">Добавить карточку</button>
+
+        <h4 style="margin: 10px 0 5px 0; font-size: 14px; color: #1e1e1c;">Карточек готово к сохранению: </h4>
+        <div class="cards-list-preview" id="cards-preview-container"></div>
+
+        <div class="popup-actions">
+            <button class="btn-cancel" id="close-create-deck-btn">Отмена</button>
+            <button class="btn-submit" id="save-full-deck-btn">Сохранить колоду</button>
+        </div>
+    </div>
+</div>
+
+<div class="popup-overlay" id="custom-alert" style="z-index: 100;">
+    <div class="popup-box popup-alert">
+            <p id="custom-alert-message" style="font-size: 18px; font-weight: bold; margin-bottom: 20px; word-break: break-word; line-height: 1.4;"></p>
+        <button id="custom-alert-close" class="popup-close-btn" style="background: #1e1e1c; color: #f8f5f3; border: none; padding: 10px 30px; font-size: 16px; font-weight: bold; border-radius: 12px; cursor: pointer;">Понятно</button>
+    </div>
+</div>
+
+<div class="popup-overlay" id="custom-confirm" style="z-index: 100;">
+    <div class="popup-box popup-confirm">
+        <p id="custom-confirm-message" style="font-size: 18px; font-weight: bold; margin-bottom: 20px; word-break: break-word; line-height: 1.4;"></p>
+        <div style="display: flex; gap: 15px; justify-content: center;">
+            <button id="custom-confirm-no" class="popup-close-btn" style="background: #c5bcb7; color: #1e1e1c; border: none; padding: 10px 20px; font-size: 16px; font-weight: bold; border-radius: 12px; cursor: pointer; flex: 1;">Отмена</button>
+            <button id="custom-confirm-yes" class="popup-confirm-btn" style="background: #1e1e1c; color: #f8f5f3; border: none; padding: 10px 20px; font-size: 16px; font-weight: bold; border-radius: 12px; cursor: pointer; flex: 1;">Да</button>
+        </div>
+    </div>
+</div>
+
+<div id="tutorial-popup" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(30,30,28,0.82); z-index:9999; align-items:center; justify-content:center;">
+    <div style="background:#f8f5f3; border-radius:28px; padding:32px 28px 24px; max-width:720px; width:92%; text-align:center; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.35);">
+        <h2 id="tut-title" style="margin:0 0 16px; font-size:22px; font-weight:900; color:#1e1e1c;"></h2>
+        <img id="tut-img" src="" alt="Обучение"
+             style="width:100%; max-height:500px; object-fit:cover; object-position:center; border-radius:16px; border:2px solid #1e1e1c; background:#fff;">
+        <p id="tut-caption" style="margin:14px 0 10px; font-size:15px; color:rgba(30,30,28,0.75); line-height:1.5;"></p>
+        <div id="tut-dots" style="display:flex; justify-content:center; gap:8px; margin-bottom:18px;"></div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <button id="tut-skip" style="background:transparent; border:none; color:#a0a0a0; font-weight:700; font-size:14px; cursor:pointer;">Пропустить</button>
+            <div style="display:flex; gap:10px;">
+                <button id="tut-prev" style="background:#e0dbd7; border:none; padding:10px 20px; border-radius:14px; font-weight:700; font-size:15px; cursor:pointer;">Назад</button>
+                <button id="tut-next" style="background:#1e1e1c; color:#f8f5f3; border:none; padding:10px 24px; border-radius:14px; font-weight:900; font-size:15px; cursor:pointer;">Далее</button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <p><i>&copy; Guseinova S. S. - 2026</i></p>
+</footer>
+</div>
+
+<script src="scripts/menu.js"></script>
+</body>
+</html>

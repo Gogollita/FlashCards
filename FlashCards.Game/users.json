@@ -1,0 +1,347 @@
+{
+  "www": {
+    "Login": "www",
+    "Password": "ww",
+    "Username": "www",
+    "TotalSecondsSpent": 11,
+    "StarsCurrency": 0,
+    "HasSeenTutorial": true,
+    "CurrentAvatarId": "monkey",
+    "PurchasedAvatarIds": [
+      "monkey"
+    ],
+    "ProfileProgress": {
+      "1": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": false
+      },
+      "2": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "3": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "4": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "5": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      }
+    },
+    "FavoriteWordIds": [],
+    "TranslationDirection": "ru-en",
+    "CustomDecks": {},
+    "ActiveSession": {
+      "LevelId": "1",
+      "CardIndex": 3,
+      "KnownWords": [
+        0
+      ]
+    }
+  },
+  "sss": {
+    "Login": "sss",
+    "Password": "ss",
+    "Username": "sss",
+    "TotalSecondsSpent": 115,
+    "StarsCurrency": 1,
+    "HasSeenTutorial": true,
+    "CurrentAvatarId": "bear",
+    "PurchasedAvatarIds": [
+      "monkey",
+      "donkey",
+      "cat",
+      "dog",
+      "frog",
+      "bear"
+    ],
+    "ProfileProgress": {
+      "1": {
+        "HighestStars": 2,
+        "LearnedWordsCount": 4,
+        "IsCompleted": true,
+        "IsLocked": false
+      },
+      "2": {
+        "HighestStars": 3,
+        "LearnedWordsCount": 5,
+        "IsCompleted": true,
+        "IsLocked": false
+      },
+      "3": {
+        "HighestStars": 3,
+        "LearnedWordsCount": 4,
+        "IsCompleted": true,
+        "IsLocked": false
+      },
+      "4": {
+        "HighestStars": 3,
+        "LearnedWordsCount": 6,
+        "IsCompleted": true,
+        "IsLocked": false
+      },
+      "5": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "custom_1782334881989": {
+        "HighestStars": 3,
+        "LearnedWordsCount": 1,
+        "IsCompleted": true,
+        "IsLocked": false
+      }
+    },
+    "FavoriteWordIds": [],
+    "TranslationDirection": "en-ru",
+    "CustomDecks": {
+      "custom_1782334881989": {
+        "Title": "\u044B\u0444\u044B",
+        "Cards": [
+          {
+            "Id": "c_1782334881293_839",
+            "Word": "",
+            "Translation": "",
+            "Image": ""
+          }
+        ]
+      }
+    },
+    "ActiveSession": {
+      "LevelId": "1",
+      "CardIndex": 6,
+      "KnownWords": [
+        0,
+        3,
+        4
+      ]
+    }
+  },
+  "uuu": {
+    "Login": "uuu",
+    "Password": "uu",
+    "Username": "uuu",
+    "TotalSecondsSpent": 2,
+    "StarsCurrency": 0,
+    "HasSeenTutorial": true,
+    "CurrentAvatarId": "monkey",
+    "PurchasedAvatarIds": [
+      "monkey"
+    ],
+    "ProfileProgress": {
+      "1": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": false
+      },
+      "2": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "3": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "4": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "5": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      }
+    },
+    "FavoriteWordIds": [],
+    "TranslationDirection": "ru-en",
+    "CustomDecks": {},
+    "ActiveSession": {
+      "LevelId": "1",
+      "CardIndex": 0,
+      "KnownWords": []
+    }
+  },
+  "iii": {
+    "Login": "iii",
+    "Password": "ii",
+    "Username": "iii",
+    "TotalSecondsSpent": 27,
+    "StarsCurrency": 2,
+    "HasSeenTutorial": true,
+    "CurrentAvatarId": "monkey",
+    "PurchasedAvatarIds": [
+      "monkey"
+    ],
+    "ProfileProgress": {
+      "1": {
+        "HighestStars": 2,
+        "LearnedWordsCount": 4,
+        "IsCompleted": true,
+        "IsLocked": false
+      },
+      "2": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": false
+      },
+      "3": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "4": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "5": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      }
+    },
+    "FavoriteWordIds": [],
+    "TranslationDirection": "ru-en",
+    "CustomDecks": {},
+    "ActiveSession": {
+      "LevelId": "2",
+      "CardIndex": 2,
+      "KnownWords": [
+        0
+      ]
+    }
+  },
+  "gg": {
+    "Login": "gg",
+    "Password": "g",
+    "Username": "gg",
+    "TotalSecondsSpent": 0,
+    "StarsCurrency": 0,
+    "HasSeenTutorial": true,
+    "CurrentAvatarId": "monkey",
+    "PurchasedAvatarIds": [
+      "monkey"
+    ],
+    "ProfileProgress": {
+      "1": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": false
+      },
+      "2": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "3": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "4": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "5": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      }
+    },
+    "FavoriteWordIds": [],
+    "TranslationDirection": "ru-en",
+    "CustomDecks": {},
+    "ActiveSession": {
+      "LevelId": null,
+      "CardIndex": 0,
+      "KnownWords": []
+    }
+  },
+  "jj": {
+    "Login": "jj",
+    "Password": "j",
+    "Username": "jj",
+    "TotalSecondsSpent": 23,
+    "StarsCurrency": 7,
+    "HasSeenTutorial": true,
+    "CurrentAvatarId": "monkey",
+    "PurchasedAvatarIds": [
+      "monkey"
+    ],
+    "ProfileProgress": {
+      "1": {
+        "HighestStars": 2,
+        "LearnedWordsCount": 4,
+        "IsCompleted": true,
+        "IsLocked": false
+      },
+      "2": {
+        "HighestStars": 3,
+        "LearnedWordsCount": 5,
+        "IsCompleted": true,
+        "IsLocked": false
+      },
+      "3": {
+        "HighestStars": 2,
+        "LearnedWordsCount": 2,
+        "IsCompleted": true,
+        "IsLocked": false
+      },
+      "4": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": false
+      },
+      "5": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      }
+    },
+    "FavoriteWordIds": [],
+    "TranslationDirection": "ru-en",
+    "CustomDecks": {},
+    "ActiveSession": {
+      "LevelId": "4",
+      "CardIndex": 2,
+      "KnownWords": [
+        0
+      ]
+    }
+  }
+}
