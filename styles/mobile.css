@@ -1,11 +1,253 @@
 @media (max-width: 768px) {
-
-   
+    header nav .header-icon {
+        width: 36px;
+        height: 36px;
+    }
+    .main-section-title {
+        font-size: 24px;
+    }
+    #current-session-container {
+        padding: 16px;
+    }
+    #current-session-title {
+        font-size: 20px;
+    }
+    #current-session-progress-text {
+        font-size: 15px;
+    }
+    #btn-continue-session {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+    .card-scene {
+        width: 320px;
+        height: 320px;
+    }
+    .card-text.fs-55 {
+        font-size: 32px;
+    }
+    .action-btn-circle {
+        width: 95px;
+        height: 95px;
+    }
+    .action-btn-circle img {
+        width: 55px;
+    }
+    .levels-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 15px;
+    }
+    .level-card {
+        height: 180px;
+        padding: 20px 12px;
+    }
+    .shop-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    .shop-item-card {
+        height: 240px;
+        padding: 20px 12px;
+    }
+    .fav-words-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 15px;
+    }
+    .settings-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .settings-info {
+        padding-right: 0;
+    }
+    .btn-danger-action {
+        width: 100%;
+    }
+    .lang-select {
+        width: 100%;
+    }
 }
 
 @media (max-width: 575px) {
-
-}
-@media (max-width: 399px) {
-
+    body {
+        font-size: 14px;
+    }
+    header nav .profile-level-wrapper {
+        min-width: 130px;
+    }
+    header nav .profile-level-label {
+        font-size: 14px; 
+    }
+    header nav .header-icon {
+        width: 24px;
+        height: 24px;
+    }
+    .tab-content
+    {
+        padding: 0;
+    }    
+    .main-section-title {
+        font-size: 20px;
+    }
+    .all-stars-cnt {
+        font-size: 15px;
+        padding: 8px 16px;
+    }
+    .current-card-container {
+        border-radius: 20px;
+        max-width: 300px;
+    }
+    #current-session-title {
+        font-size: 20px;
+    }
+    #current-session-progress-text{
+        font-size: 16px;
+    }
+    #btn-continue-session {
+        font-size: 15px;
+        padding: 10px 16px;
+    }
+    .stats-container {
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px 16px;
+    }
+    .progress-bar-wrapper {
+        width: 100%;
+        align-items: center;
+    }
+    .card-scene {
+        width: 270px;
+        height: 270px;
+    }
+    .card-face {
+        border-radius: 30px;
+    }
+    .card-text.fs-55 {
+        font-size: 26px;
+    }
+    .fs-55{
+        font-size: 20px;
+    }
+    .action-btn-circle {
+        width: 80px;
+        height: 80px;
+    }
+    .action-btn-circle img {
+        width: 45px;
+    }
+    .fs-20 {
+        font-size: 14px;
+    }
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    .dash-card p {
+        font-size: 28px;
+    }
+    .chart-container {
+        height: 160px;
+    }
+    .chart-bar-wrapper {
+        height: 110px;
+        width: 25px;
+    }
+    .chart-column {
+        width: 40px;
+    }
+    .chart-label {
+        font-size: 11px;
+    }
+    .shop-balance-badge {
+        font-size: 15px;
+        padding: 8px 20px;
+    }
+    .shop-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .shop-item-card {
+        height: 210px;
+    }
+    .shop-item-img {
+        width: 64px;
+        height: 64px;
+    }
+    .shop-item-card h3 {
+        font-size: 15px;
+    }
+    .shop-btn {
+        font-size: 12px;
+        padding: 6px 10px;
+        width: 80%;
+    }
+    .end-card {
+        width: 270px;
+        height: 270px;
+        border-radius: 30px;
+        padding: 15px;
+    }
+    .end-card h1.fs-55 {
+        font-size: 20px;
+    }
+    .end-card p.fs-24 {
+        font-size: 14px;
+    }
+    .end-stars .star-img-icon {
+        width: 24px;
+        height: 24px;
+    }
+    .btn-primary {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+    .level-card{
+        align-items: flex-start;
+        padding-left: 20px;   
+    }
+    .profile-progress-bar{
+        height: 6px;
+        margin-bottom: 6px;
+    }
+    nav{
+        height: 70px;
+    }
+    header nav .center-flex{
+        padding: 6px;
+    }
+    header nav .header-icon[data-tab="settings"] {
+        width: 24px;
+        height: 24px;
+    }
+    .stats-container{
+        flex-direction: unset;
+    }
+    .stars {
+        margin-bottom: 0;
+    }
+    .progress-bar{
+        height: 8px;
+    }
+    .card-fav-btn{
+        width: 32px;
+        height: 32px;
+    }
+    #user-decks-container.levels-grid{
+        display: flex;
+        flex-direction: column;
+    }
+    #levels-container.levels-grid{
+        gap: 10px;
+        padding: 0 15px;
+    }
+    .app-section{
+        margin-top: 0px;
+        padding-top: 10px;
+    }
+    .main-section-title{
+        margin: 0 0 10px 0;
+    }
+    #current-session-container{
+        margin-top: 0;
+    }
 }

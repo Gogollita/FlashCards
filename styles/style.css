@@ -59,7 +59,7 @@ nav {
 
 .nav3 {
     position: absolute;
-    width: 70%;
+    min-width: 70%;
     height: 100%;
 }
 
@@ -179,6 +179,18 @@ main {
     font-size: 20px;
     box-shadow: 0 4px 15px rgba(30, 30, 28, 0.04);
     margin-bottom: 15px;
+}
+
+.current-card-container {
+    display: block; 
+    background: #f8f5f3; 
+    border: 3px solid #1e1e1c;); 
+    border-radius: 40px; 
+    max-width: 600px; 
+    margin: 25px auto; 
+    padding: 30px; 
+    text-align: center; 
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 15px;
 }
 
 .levels-grid {
@@ -341,6 +353,19 @@ main {
 
 .shop-item-action-wrapper {
     width: 100%;
+}
+
+.btn-continue-session{
+    background-color: #1e1e1c; 
+    color: #f8f5f3; 
+    padding: 16px 40px; 
+    font-size: 20px; 
+    font-weight: 900; 
+    border-radius: 30px; 
+    cursor: pointer; 
+    width: 100%; 
+    max-width: 100%; 
+    transition: opacity 0.2s;
 }
 
 .shop-btn {
@@ -690,6 +715,11 @@ main {
     user-select: none;
     min-height: 32px;
     margin-bottom: 8px;
+}
+
+#current-session-title {
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
 .progress-bar-wrapper {
@@ -1310,95 +1340,132 @@ footer {
 }
 
 @media (max-width: 1024px) {
-    .game-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+    body {
+        font-size: 16px;
     }
-
-    .card-scene,
-    .end-card {
-        width: 90vw;
-        height: 90vw;
-        max-width: 450px;
-        max-height: 450px;
-        margin: 20px auto;
+    header nav.bg-white.rounded {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        margin: 0 auto 20px auto;
+        max-width: 100%;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
     }
-
-    .dashboard-grid {
-        grid-template-columns: 1fr;
+    header nav .center-flex {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        padding: 12px;
     }
-
-    .levels-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        padding: 0 20px;
-    }
-
-    .level-card {
-        height: 160px;
-        padding: 25px 20px;
-    }
-
-    .resume-learning-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-        padding: 25px;
-        margin: 15px auto;
-        width: 90%;
-    }
-
-    .resume-info-block {
+    header nav .profile-wrapper {
+        grid-column: 1;
+        grid-row: 1;
         align-items: center;
     }
-
-    .settings-box {
-        padding: 20px;
+    header nav .header-icon[data-tab="settings"] {
+        grid-column: 2;
+        grid-row: 1;
+        margin: 0;
+        align-self: center;
     }
-
-    .settings-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .nav {
-        height: auto;
-        padding: 10px 0;
-    }
-
-    .center-flex {
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .nav2 {
+    header nav .nav2 {
+        grid-column: 1 / span 2;
+        grid-row: 2;
         width: 100%;
+        max-width: 100%;
+        position: static;
+        padding: 6px;
+        border-radius: 25px;
+    }
+    header nav .nav3 {
+        position: static;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+        padding: 4px;
+        border-radius: 20px;
+    }
+    header nav .header-icon {
+        width: 40px;
+        height: 40px;
+        margin: 0;
+    }
+    .main-section-title {
+        font-size: 28px;
+    }
+    #current-session-container {
+        max-width: 90%;
         padding: 20px;
+        border-radius: 24px;
+        margin: 20px auto;
     }
-
-    .fav-words-grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0 10px;
+    #current-session-title {
+        font-size: 24px;
+        margin-bottom: 10px;
     }
-
-    .shop-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+    #current-session-progress-text {
+        font-size: 16px;
+        margin-bottom: 15px;
     }
-
-    .shop-item-card {
-        height: 250px;
-        padding: 20px 10px;
-    }
-
-    .shop-item-img {
-        width: 70px;
-        height: 70px;
-    }
-
-    .shop-item-card h3 {
+    #btn-continue-session {
+        padding: 14px 28px;
         font-size: 18px;
+        border-radius: 22px;
+    }
+    .game-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 20px;
+        width: 100%;
+        max-width: 440px;
+        margin: 0 auto;
+    }
+    .card-scene {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+        width: 360px;
+        height: 360px;
+        margin: 0 auto;
+    }
+    .game-grid .button-flex:nth-child(1) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .game-grid .button-flex:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    .action-btn-circle {
+        width: 110px;
+        height: 110px;
+    }
+    .action-btn-circle img {
+        width: 60px;
+        height: auto;
+    }
+    .card-face {
+        padding: 20px;
+        border-radius: 45px;
+    }
+    .card-text.fs-55 {
+        font-size: 36px;
+    }
+    .levels-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 20px;
+    }
+    .dashboard-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+    .shop-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+    .fav-words-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 }
+
+
 

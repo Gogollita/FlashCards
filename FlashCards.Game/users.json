@@ -57,7 +57,7 @@
     "Login": "sss",
     "Password": "ss",
     "Username": "sss",
-    "TotalSecondsSpent": 115,
+    "TotalSecondsSpent": 1356,
     "StarsCurrency": 1,
     "HasSeenTutorial": true,
     "CurrentAvatarId": "bear",
@@ -105,9 +105,17 @@
         "LearnedWordsCount": 1,
         "IsCompleted": true,
         "IsLocked": false
+      },
+      "custom_1782430753197": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": false
       }
     },
-    "FavoriteWordIds": [],
+    "FavoriteWordIds": [
+      "l1_3"
+    ],
     "TranslationDirection": "en-ru",
     "CustomDecks": {
       "custom_1782334881989": {
@@ -120,16 +128,23 @@
             "Image": ""
           }
         ]
+      },
+      "custom_1782430753197": {
+        "Title": "s",
+        "Cards": [
+          {
+            "Id": "c_1782430752320_415",
+            "Word": "",
+            "Translation": "",
+            "Image": ""
+          }
+        ]
       }
     },
     "ActiveSession": {
-      "LevelId": "1",
-      "CardIndex": 6,
-      "KnownWords": [
-        0,
-        3,
-        4
-      ]
+      "LevelId": "custom_1782430753197",
+      "CardIndex": 0,
+      "KnownWords": []
     }
   },
   "uuu": {

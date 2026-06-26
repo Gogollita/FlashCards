@@ -463,7 +463,7 @@ function refreshGlobalStatistics() {
         }
 
         deckCard.innerHTML = `
-                <button class="deck-edit-btn" data-id="${deckId}">Отредактировать</button>
+                <button class="deck-edit-btn" data-id="${deckId}">Изменить</button>
                 <div class="level-num">МОЯ КОЛОДА</div>
                 <h2 class="fw-bold" style="font-size: 20px; word-break: break-all;">${deck.title.toUpperCase()}</h2>
                 <div class="level-status">${statusHtml}</div>
