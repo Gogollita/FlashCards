@@ -57,7 +57,7 @@
     "Login": "sss",
     "Password": "ss",
     "Username": "sss",
-    "TotalSecondsSpent": 1356,
+    "TotalSecondsSpent": 1359,
     "StarsCurrency": 1,
     "HasSeenTutorial": true,
     "CurrentAvatarId": "bear",
@@ -142,7 +142,7 @@
       }
     },
     "ActiveSession": {
-      "LevelId": "custom_1782430753197",
+      "LevelId": "2",
       "CardIndex": 0,
       "KnownWords": []
     }
@@ -356,6 +356,64 @@
       "CardIndex": 2,
       "KnownWords": [
         0
+      ]
+    }
+  },
+  "ff": {
+    "Login": "ff",
+    "Password": "f",
+    "Username": "ff",
+    "TotalSecondsSpent": 6,
+    "StarsCurrency": 0,
+    "HasSeenTutorial": true,
+    "CurrentAvatarId": "monkey",
+    "PurchasedAvatarIds": [
+      "monkey"
+    ],
+    "ProfileProgress": {
+      "1": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": false
+      },
+      "2": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "3": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "4": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "5": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      }
+    },
+    "FavoriteWordIds": [
+      "l1_6"
+    ],
+    "TranslationDirection": "ru-en",
+    "CustomDecks": {},
+    "ActiveSession": {
+      "LevelId": "1",
+      "CardIndex": 5,
+      "KnownWords": [
+        0,
+        2,
+        4
       ]
     }
   }

@@ -57,7 +57,7 @@
     "Login": "sss",
     "Password": "ss",
     "Username": "sss",
-    "TotalSecondsSpent": 115,
+    "TotalSecondsSpent": 1359,
     "StarsCurrency": 1,
     "HasSeenTutorial": true,
     "CurrentAvatarId": "bear",
@@ -105,9 +105,17 @@
         "LearnedWordsCount": 1,
         "IsCompleted": true,
         "IsLocked": false
+      },
+      "custom_1782430753197": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": false
       }
     },
-    "FavoriteWordIds": [],
+    "FavoriteWordIds": [
+      "l1_3"
+    ],
     "TranslationDirection": "en-ru",
     "CustomDecks": {
       "custom_1782334881989": {
@@ -120,16 +128,23 @@
             "Image": ""
           }
         ]
+      },
+      "custom_1782430753197": {
+        "Title": "s",
+        "Cards": [
+          {
+            "Id": "c_1782430752320_415",
+            "Word": "",
+            "Translation": "",
+            "Image": ""
+          }
+        ]
       }
     },
     "ActiveSession": {
-      "LevelId": "1",
-      "CardIndex": 6,
-      "KnownWords": [
-        0,
-        3,
-        4
-      ]
+      "LevelId": "2",
+      "CardIndex": 0,
+      "KnownWords": []
     }
   },
   "uuu": {
@@ -341,6 +356,64 @@
       "CardIndex": 2,
       "KnownWords": [
         0
+      ]
+    }
+  },
+  "ff": {
+    "Login": "ff",
+    "Password": "f",
+    "Username": "ff",
+    "TotalSecondsSpent": 6,
+    "StarsCurrency": 0,
+    "HasSeenTutorial": true,
+    "CurrentAvatarId": "monkey",
+    "PurchasedAvatarIds": [
+      "monkey"
+    ],
+    "ProfileProgress": {
+      "1": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": false
+      },
+      "2": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "3": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "4": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "5": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      }
+    },
+    "FavoriteWordIds": [
+      "l1_6"
+    ],
+    "TranslationDirection": "ru-en",
+    "CustomDecks": {},
+    "ActiveSession": {
+      "LevelId": "1",
+      "CardIndex": 5,
+      "KnownWords": [
+        0,
+        2,
+        4
       ]
     }
   }

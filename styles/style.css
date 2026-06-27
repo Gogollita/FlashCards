@@ -184,7 +184,7 @@ main {
 .current-card-container {
     display: block; 
     background: #f8f5f3; 
-    border: 3px solid #1e1e1c;); 
+    border: 3px solid #1e1e1c; 
     border-radius: 40px; 
     max-width: 600px; 
     margin: 25px auto; 

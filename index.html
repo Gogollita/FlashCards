@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 1024px)">
 </head>
 <body>
-<div class="popup-overlay active" id="auth-modal" style="bg-brown; z-index: 100000; display: flex;">
+<div class="popup-overlay active" id="auth-modal" style="z-index: 100000; display: flex;">
     <div class="popup-box" style="max-width: 350px;">
         <img src="assets/img/animals/monkey.png" style="width: 80px; margin-bottom: 15px;" alt="Logo">
         <h2 id="auth-title" style="margin-top: 0; margin-bottom: 20px; font-weight: 900; color: #1e1e1c;">Вход в аккаунт</h2>
@@ -121,7 +121,7 @@
 
     <article id="tab-stats" class="tab-content">
         <div class="stats-dashboard-wrapper text-center app-section">
-            <h1 class="main-section-title">МОЯ СТАТИСТИКА</h1>
+            <h2 class="main-section-title">МОЯ СТАТИСТИКА</h2>
 
             <div class="dashboard-grid">
                 <div class="dash-card bg-white">
@@ -206,7 +206,7 @@
 
                 <div class="game-grid">
                     <div class="button-flex">
-                        <button id="btn-dont-know" class="action-btn-circle"><img src="assets/img/animals/frog.png" height="80" width="96" alt="Не знаю"/></button>
+                        <button id="btn-dont-know" class="action-btn-circle"><img src="assets/img/animals/frog.png" height="80" width="96" alt="Не знаю"></button>
                         <h2 class="fw-bold fs-20">НЕ ЗНАЮ</h2>
                     </div>
 
@@ -214,14 +214,14 @@
                         <div class="card" id="flashcard">
                             <div class="card-face card-front bg-white">
                                 <button class="card-fav-btn btn-fav-toggle" aria-label="Добавить в избранное">
-                                    <img src="assets/img/nav/reviews.png" alt="Fav"/>
+                                    <img src="assets/img/nav/reviews.png" alt="Fav">
                                 </button>
                                 <img src="assets/img/animals/cat.png" class="card-icon card-img" id="front-card-img" alt="Card">
                                 <p class="fw-bold fs-55 card-text">КОТ</p>
                             </div>
                             <div class="card-face card-back bg-white">
                                 <button class="card-fav-btn btn-fav-toggle" aria-label="Добавить в избранное">
-                                    <img src="assets/img/nav/reviews.png" alt="Fav"/>
+                                    <img src="assets/img/nav/reviews.png" alt="Fav">
                                 </button>
                                 <img src="assets/img/animals/cat.png" class="card-icon card-img" id="back-card-img" alt="Card">
                                 <p class="fw-bold fs-55 card-text">CAT</p>
@@ -230,7 +230,7 @@
                     </div>
 
                     <div class="button-flex">
-                        <button id="btn-know" class="action-btn-circle"><img src="assets/img/animals/bear.png" height="80" width="96" alt="Знаю"/></button>
+                        <button id="btn-know" class="action-btn-circle"><img src="assets/img/animals/bear.png" height="80" width="96" alt="Знаю"></button>
                         <h2 class="fw-bold fs-20">ЗНАЮ</h2>
                     </div>
                 </div>
@@ -273,7 +273,7 @@
 
     <article id="tab-settings" class="tab-content">
         <div class="settings-dashboard-wrapper text-center">
-            <h1 class="fw-bold fs-55 m-20">НАСТРОЙКИ</h1>
+            <h2 class="fw-bold fs-55 m-20">НАСТРОЙКИ</h2>
 
             <div class="settings-box bg-white">
                 <div class="settings-item">
@@ -374,8 +374,8 @@
 
 <div id="tutorial-popup" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(30,30,28,0.82); z-index:9999; align-items:center; justify-content:center;">
     <div style="background:#f8f5f3; border-radius:28px; padding:32px 28px 24px; max-width:720px; width:92%; text-align:center; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.35);">
-        <h2 id="tut-title" style="margin:0 0 16px; font-size:22px; font-weight:900; color:#1e1e1c;"></h2>
-        <img id="tut-img" src="" alt="Обучение"
+        <h2 id="tut-title" style="margin:0 0 16px; font-size:22px; font-weight:900; color:#1e1e1c;">Обучение</h2>
+        <img id="tut-img" src="#" alt="Обучение"
              style="width:100%; max-height:500px; object-fit:cover; object-position:center; border-radius:16px; border:2px solid #1e1e1c; background:#fff;">
         <p id="tut-caption" style="margin:14px 0 10px; font-size:15px; color:rgba(30,30,28,0.75); line-height:1.5;"></p>
         <div id="tut-dots" style="display:flex; justify-content:center; gap:8px; margin-bottom:18px;"></div>

@@ -275,11 +275,15 @@ const endStarsRating = document.getElementById('end-stars-rating');
 const endResultText = document.getElementById('end-result-text');
 
 function getStarsCount(knownCount, totalCount) {
-    if(totalCount === 0) return 0;
+    if(totalCount === 0) 
+        return 0;
     const ratio = knownCount / totalCount;
-    if (ratio >= 0.8) return 3;
-    if (ratio >= 0.5) return 2;
-    if (ratio >= 0.1) return 1;
+    if (ratio >= 0.8) 
+        return 3;
+    if (ratio >= 0.5) 
+        return 2;
+    if (ratio >= 0.1) 
+        return 1;
     return 0;
 }
 
@@ -510,7 +514,8 @@ function updateStats() {
 
 function applyCardContent() {
     const currentLevelCards = getLevelCards(activeLevelId);
-    if (!currentLevelCards || currentLevelCards.length === 0) return;
+    if (!currentLevelCards || currentLevelCards.length === 0) 
+        return;
     const currentData = currentLevelCards[currentCardIndex];
 
     const frontImg = document.getElementById('front-card-img');
@@ -527,7 +532,7 @@ function applyCardContent() {
     }
 
     if (currentData.img && currentData.img.trim() !== "") {
-        frontImg.src = backImg.src = currentData.img;
+        frontImg.src = backImg.src = currentData.img; /*так тоже можно*/
         frontImg.style.display = backImg.style.display = "block";
     } else {
         frontImg.style.display = backImg.style.display = "none";
