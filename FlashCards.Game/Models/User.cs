@@ -1,4 +1,6 @@
-﻿namespace FlashCards.Server.Models;
+﻿using System.Text.Json.Serialization;
+
+namespace FlashCards.Server.Models;
 
 public class UserData
 {
@@ -40,8 +42,16 @@ public class CustomDeck
 
 public class Card
 {
+	//сериализация для правильного получения значений в js (т.к. модель ожидает поля с заглавных букв)
+    [JsonPropertyName("id")] //JsonPropertyName - атрибут, как раз-таки нужный для указания правильного наименования
     public string Id { get; set; } = "";
-    public string Word { get; set; } = "";
-    public string Translation { get; set; } = "";
-    public string Image { get; set; } = "";
+
+    [JsonPropertyName("ru")]
+    public string Ru { get; set; } = "";
+
+    [JsonPropertyName("en")]
+    public string En { get; set; } = "";
+
+    [JsonPropertyName("img")]
+    public string Img { get; set; } = "";
 }
