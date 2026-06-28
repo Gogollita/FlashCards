@@ -4,9 +4,8 @@ namespace FlashCards.Server.Models;
 
 public class UserData
 {
-    public string Login { get; set; } = "";
+     public string Login { get; set; } = "";
     public string Password { get; set; } = "";
-    public string Username { get; set; } = "";
     public int TotalSecondsSpent { get; set; } = 0;
     public int StarsCurrency { get; set; } = 0;
     public bool HasSeenTutorial { get; set; } = false;

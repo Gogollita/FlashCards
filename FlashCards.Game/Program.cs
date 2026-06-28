@@ -48,8 +48,8 @@ app.MapGet("/error/status/{code:int}", (int code) =>
 
 app.MapPost("/register", async (RegisterRequest request, UserRepository repo) =>
 {
-    if (string.IsNullOrWhiteSpace(request.Login) || string.IsNullOrWhiteSpace(request.Password) || string.IsNullOrWhiteSpace(request.Username))
-        return Results.BadRequest(new { error = "Все поля (login, password, username) обязательны" });
+    if (string.IsNullOrWhiteSpace(request.Login) || string.IsNullOrWhiteSpace(request.Password))
+        return Results.BadRequest(new { error = "Все поля (login, password) обязательны" });
 
     if (repo.UserExists(request.Login))
         return Results.Conflict(new { error = "Пользователь с таким логином уже существует" });
@@ -58,7 +58,6 @@ app.MapPost("/register", async (RegisterRequest request, UserRepository repo) =>
     {
         Login = request.Login,
         Password = request.Password,
-        Username = request.Username,
         TotalSecondsSpent = 0,
         StarsCurrency = 0,
         CurrentAvatarId = "monkey",
@@ -80,7 +79,6 @@ app.MapPost("/register", async (RegisterRequest request, UserRepository repo) =>
     return Results.Created($"/user/{newUser.Login}", new
     {
         newUser.Login,
-        newUser.Username,
         newUser.StarsCurrency,
         newUser.HasSeenTutorial,
         newUser.CurrentAvatarId,
@@ -106,7 +104,6 @@ app.MapPost("/login", (LoginRequest request, UserRepository repo) =>
     return Results.Ok(new
     {
         user.Login,
-        user.Username,
         user.StarsCurrency,
         user.HasSeenTutorial,
         user.CurrentAvatarId,
@@ -129,7 +126,6 @@ app.MapGet("/user/{login}", (string login, UserRepository repo) =>
     return Results.Ok(new
     {
         user.Login,
-        user.Username,
         user.StarsCurrency,
         user.HasSeenTutorial,
         user.CurrentAvatarId,
@@ -155,7 +151,6 @@ app.MapPut("/user", (UserData updatedUser, UserRepository repo) =>
     if (!string.IsNullOrWhiteSpace(updatedUser.Password))
         existing.Password = updatedUser.Password;
 
-    existing.Username = updatedUser.Username;
     existing.TotalSecondsSpent = updatedUser.TotalSecondsSpent;
     existing.StarsCurrency = updatedUser.StarsCurrency;
     existing.HasSeenTutorial = updatedUser.HasSeenTutorial;

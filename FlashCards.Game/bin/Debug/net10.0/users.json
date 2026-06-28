@@ -1,1 +1,78 @@
-{}
+{
+  "www": {
+    "Login": "www",
+    "Password": "ww",
+    "Username": "www",
+    "TotalSecondsSpent": 26,
+    "StarsCurrency": 0,
+    "HasSeenTutorial": true,
+    "CurrentAvatarId": "monkey",
+    "PurchasedAvatarIds": [
+      "monkey"
+    ],
+    "ProfileProgress": {
+      "1": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": false
+      },
+      "2": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "3": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "4": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "5": {
+        "HighestStars": 0,
+        "LearnedWordsCount": 0,
+        "IsCompleted": false,
+        "IsLocked": true
+      },
+      "custom_1782604439605": {
+        "HighestStars": 2,
+        "LearnedWordsCount": 1,
+        "IsCompleted": true,
+        "IsLocked": false
+      }
+    },
+    "FavoriteWordIds": [],
+    "TranslationDirection": "ru-en",
+    "CustomDecks": {
+      "custom_1782604439605": {
+        "Title": "ad",
+        "Cards": [
+          {
+            "id": "c_1782604436453_403",
+            "ru": "A",
+            "en": "A",
+            "img": ""
+          },
+          {
+            "id": "c_1782604457148_746",
+            "ru": "DD",
+            "en": "D",
+            "img": ""
+          }
+        ]
+      }
+    },
+    "ActiveSession": {
+      "LevelId": "custom_1782604439605",
+      "CardIndex": 0,
+      "KnownWords": []
+    }
+  }
+}
